@@ -1,0 +1,63 @@
+Schedule for Project Completion:
+
+Week 01 (2/06-2/12):
+    -Learning Goals:
+        -Review nand2tetris CPU Texbook Parts, General RISC-V CPU Overview
+        -Decide between 1-cycle and 5-stage (!)
+        -Set tentative schedule for project completion (!)
+    -Code Goals:
+        -Verilog Intro Tutorial (!)
+        -Find Hardware Simulator to use and start playing with it
+    
+Week 02 (2/13-2/19):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 03 (2/20-2/26):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 04 (2/27-3/05):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 05 (3/06-3/12):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 06 (3/13-3/19):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 07 (3/20-3/26):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 08 (3/27-4/02):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 09 (4/03-4/09):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 10 (4/10-4/16):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 11 (4/17-4/23):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 12 (4/24-4/30):
+    -Learning Goals:
+    -Code Goals:
+    
+Week 13 (5/01-5/07):
+    -Learning Goals: Extra Week
+    -Code Goals: Extra Week
+    
+Week 14? (5/08-5/14):
+    -Learning Goals: Extra Week
+    -Code Goals: Extra Week
+

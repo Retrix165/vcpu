@@ -1,9 +1,11 @@
 Schedule for Project Completion:
-
+Main Goal:
+    Single Cycle 32-bit CPU for RISC-V Integer Base ISA
+    
 Week 01 (2/06-2/12):
     -Learning Goals:
         -Review nand2tetris CPU Texbook Parts, General RISC-V CPU Overview
-        -Decide between 1-cycle and 5-stage (!)
+        -Decide between 1-cycle and 5-stage (!) DONE
         -Set tentative schedule for project completion (!)
     -Code Goals:
         -Verilog Intro Tutorial (!)

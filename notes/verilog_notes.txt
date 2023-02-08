@@ -1,0 +1,196 @@
+Verilog Notes:
+ 
+Terms:
+    -Verilog HDL, can be used for hardware simulation and creation
+    -Behavior Modeling:
+        -circuit described by the behavior/general logic
+    -Structural Modeling:
+        -circuit describes specific hardware elements that connect
+    -RTL:
+        -Register Transfer Level, Behavioral modeling type, used to synthesize
+    -Synthesis:
+        -Translating HDL to a circuit with optimizations
+    -RTL Synthesis:
+        -Translating an RTL model into optimizated gate level model
+    -Translation:
+        -Code translated into desired hardware model using a synthesis engine
+    -Optimization:
+        -Hardware model simpilified or modified for better results
+
+Modules:
+    -Case sensitive, keywords are lowercase
+    -comments begin with //, multi line are /* */
+    -semicolon is terminator
+    -General Structure:
+        module mod_name(port_list);
+            //port declarations
+            //data type declarations
+            //circuit functionality
+            //timing specifications
+        endmodule
+    -can be used at a higher level code by the syntax
+        module_name #time_delay(optional) this_module_name (port_list);
+
+Port Lists:
+    -contain input, outputs, and bidirectionals (inout)
+    -port types:
+        input
+            -cannot be declared as variable, can have variable or net passed in though
+        output
+            -can be declared as either variable or net, can only drive out to a net though
+        bidirectional
+            -can only be declared as a net, can drive into/from a net only
+        
+    SYNTAX:
+        port_type [MSB:LSB] port_name
+    -can declare types in port list (within () after module_name)
+    -Instantiate port lists either by
+        -ordered list: module_name this_name(1st, 2nd, 3rd, 4th); (arguments are passed to formal port list in order)
+        -by port name: module_name this_name(.a(2nd), .c(3rd), .b(1st), .d(4th)) (arguments are paired with formal specific port, any order)
+    
+Data Types:
+    -Net:
+        -represent physical interconnect between blocks, always flowing, no stored value
+        -need continous assign state
+        -Net Data Types:
+            wire - node or connection
+            tri - tri-state note
+            supply0 - hard code logic 0
+            supply1 - hard code logic 1
+        
+    -Variable (register ?):
+        -represent element to store data
+        -can only be assinged with a procedure, task, or function
+        -Variable Data Types:
+            reg - unsigned bit arbitrary size register
+            integer - signed 32-bit
+        -Size specified by value format
+            FORMAT
+                {sign}{bitsize}'{base-code d,h,b,o,s}{number}
+            ex:
+                3'b010 3bit wide binary number
+            -wildcards x and z
+    -Default port type is wire if not declared
+    
+Arithmetic Operators (binary/unary):
+    op1 operator op2 / operator{op}
+    + (add or positive)
+    - (subtract or negative)
+    * (multiply)
+    / (divide)
+    % (modulus)
+    ** (exponent)
+    -Treat a vector/bus as whole value, carries are auto handled and will be lost in can't be put into result place size
+    -ha
+
+Bitwise Operators (binary):
+    op1 operator op2
+    ~ (bit flip)
+    & (and)
+    | (or)
+    ^ (xor)
+    ^~ (xnor)
+    -operates on each bit pair, smaller of two operands in 0 left expanded
+
+Reduction Operators (unary):
+    operator{op} ex &i_a -> 1'b0
+    & (and all bits)
+    ~& (nand all bits)
+    | (or all bits)
+    ~| (nor all bits)
+    ^ (xor all bits)
+    ^~ (xnor all bits)
+    
+    -reduces a bus/vector to single bit, chains operation
+    
+Relational Operators (binary):
+    op1 operator op2
+    > (greater)
+    >= (greater than or equal)
+    < (less)
+    <= (less than or equal)
+    
+    -return 1 or 0, unknown if either operand has x or z
+
+Equality Operators(binary):
+    op1 operator op2
+    == (equality)
+    != (inequality)
+    === (case equality)
+    !== (case inequality)
+    -equality, only 1 and 0 are supported, so xz includsion in an operand and so unknown result
+    -case inequality needs every symbol in operand number to be the same, x and Z included
+
+Logical Operators (binary and unary):
+    op1 operator op2 / operator{op}
+    ! (logical not)
+    && (logical and)
+    || (logical or)
+    
+    -basic logic rules, values of zero are interpreted as false, non-zero values are true
+    -unknown results with xz
+    
+Shift Operators (binary):
+    op1 operator const
+    << (logical shift left)
+    >> (logical shift right)
+    <<< (arithmetic shift left)
+    >>> (arithmetic shift right)
+    
+    -arithmetic padds with msb (sign), logical pads with 0 regardless
+
+STOPPED AT 21:44
+    
+Other Operators:
+
+    (condition): true_value ? false_value (ternary)
+    {} (bitwise concatenate)
+    {repeat_value{thing_to_repeat}} (replicate)
+
+Parameters:
+    -Constant value assigned to a name, basically a const, name can be used as symbolic value later
+        SYNTAX
+            parameter param_name = value;
+            local
+    -can be overwritten at compile time in specific cases, localparam cannot
+            
+
+
+Operators:
+
+    Always
+
+    Bitwise
+    
+    Case
+    
+    Concatenation
+    
+    Conditional
+    
+    For Loop
+    
+    Forever Loop
+    
+    Function
+    
+    Logical
+
+    Reductional
+    
+    Relational
+    
+    Repeat Loop
+    
+    Replicational
+    
+    Task
+    
+    While Loop
+
+
+Naming Conventions:
+    i_--- Used for inputs
+    o_--- Used for outputs
+    r_--- Used for registers
+    w_--- Used for wires

@@ -72,6 +72,91 @@ Data Types:
             -wildcards x and z
     -Default port type is wire if not declared
     
+Assignment:
+    Continuous:
+        -Combinatorial Logic
+        -Left hand identifier must be a net data type
+        -Always active, change in an input on right side changes value on left side.
+        SYNTAX:
+            data_type[MSB:LSB] lhs_ident = expression;
+            OR
+            data_type[MSB:LSB] lhs_ident;
+            assign lhs_ident = expression;
+    Procedural:
+        -In procedural blocks
+        -each block starts at sim_time=0 and run in parallel
+        -initial block
+            -used to intialize behavorial statements for simulation
+            -executes only once at sim_time=0
+            -begin and end keywords used to contain initial block
+        -always block
+            -used to describe circuits fuctionality using behavorial statements
+            -continuously execute starting from sim_time=0
+            -multiple procedure block execute concurrently (parallel)
+            
+        Ex:
+            module clk_gen #(parameter period = 50) (output reg clk);
+                initial clk = 1'b0;
+                always
+                    #(period/2) clk = ~clk;
+                initial #100 $finish
+        = (Blocking Assignment):
+            -use for combinatorial logic usually
+            -finishes current assingment/expression before going onto next statement after this one
+            -LHS is only variable type
+        <= (Non-Blocking Assignment):
+            -use for sequential logic usually
+            -Schedules assignment to execute at end of time step, moves onto next statement before executing current statement
+            -saves current state of data types in assingment/expression (as they are in that moment)
+                -if previous non blocking modifications to data in your current expression are scheduled but not executed, it will not affect current statement
+Behavorial Statements:
+    -if-else, case, or loops must be in a procedural block (initial or always)
+    -if-else:
+        -prioritization of conditions, equivalent to chained mux gates
+    -case:
+        -conditions evaluated all at once, equivalent to one big mux
+        -casez and casex variations,
+            -casez treats z and ? as don't cares
+            -casex treates x, z, and ? as don't cares
+    -loop:
+        forever:
+            -endless execution, make sure clk progresses though otherwise infinite loop
+            -not synthesizable
+        repeat ({#})
+            -repeated code section a {#} number of times
+        while (condition)
+            -basic to understand
+            -not synthesizable
+        for loop
+            -basic syntax
+            -implemented as mutliple versions of same circuit
+RTL Processes:
+    -Combinatorial Process:
+        always @ (data names)/*
+            -see Assignments/Procedural/always block
+            -can define a sensitivity list of data names to act as triggers to run block if data names are changed
+    -Clocked/Sequential Process:
+        always @ (posedge clk, negedge clr_n)/*
+            -see Assignments/Procedural/always block
+            -can define a sensitivity list of whenever the clock is in a certain state
+    
+Functions:
+    -usually for combinatorial output, must be defined within a module, called for return value
+    -can only call other functions
+    -only combinatorial logic
+    SYNTAX:
+        function func_name
+         CODE BODY
+            fun_name = something
+        endfunction
+Tasks:
+    -used for anything (combinatorial or procedural), called as statement to do something
+    -can be combinatorial or procedural calls to things
+    SYNTAX:
+        task task_name
+        CODE BODY
+        endtask
+        
 Arithmetic Operators (binary/unary):
     op1 operator op2 / operator{op}
     + (add or positive)
@@ -138,14 +223,30 @@ Shift Operators (binary):
     >>> (arithmetic shift right)
     
     -arithmetic padds with msb (sign), logical pads with 0 regardless
-
-STOPPED AT 21:44
     
 Other Operators:
 
     (condition): true_value ? false_value (ternary)
     {} (bitwise concatenate)
     {repeat_value{thing_to_repeat}} (replicate)
+
+Precedence List:
+//  High to Low
+//  ()
+//  + - ! ~ ~& | ~| ^ ^~ etc (UNARY)
+//  **
+//  * / %
+//  + - (BINARY)
+//  << >> <<< >>>
+//  < > <= >=
+//  == != === !==
+//  & (BINARY)
+//  ^ ~^ ^~ (BINARY)
+//  | (BINARY)
+//  &&
+//  ||
+//  ?:
+//  {} {{}}
 
 Parameters:
     -Constant value assigned to a name, basically a const, name can be used as symbolic value later

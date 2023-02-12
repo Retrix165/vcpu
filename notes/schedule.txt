@@ -4,16 +4,22 @@ Main Goal:
     
 Week 01 (2/06-2/12):
     -Learning Goals:
-        -Review nand2tetris CPU Texbook Parts, General RISC-V CPU Overview
+        -Review nand2tetris CPU Texbook Parts, General RISC-V CPU Overview DONE
         -Decide between 1-cycle and 5-stage (!) DONE
-        -Set tentative schedule for project completion (!)
+        -Set tentative schedule for project completion (!) X
     -Code Goals:
-        -Verilog Intro Tutorial (!)
-        -Find Hardware Simulator to use and start playing with it
+        -Verilog Intro Tutorial (!) DONE
+        -Find Hardware Simulator to use and start playing with it X
     
 Week 02 (2/13-2/19):
     -Learning Goals:
+        -Set tentative schedule for project completion (!)
+        -RV32I Notes, make list of commands to implement
+        -List of required parts of a CPU
+        -How to Implement a CPU
     -Code Goals:
+        -Find Hardware Simulator to use and start playing with it
+        -Do simple verilog chips, examples of concepts in notes
     
 Week 03 (2/20-2/26):
     -Learning Goals:
@@ -49,11 +55,17 @@ Week 10 (4/10-4/16):
     
 Week 11 (4/17-4/23):
     -Learning Goals:
+        -Learn how to write a testbench program to test CPU
     -Code Goals:
+        -Complete CPU (!)
     
 Week 12 (4/24-4/30):
     -Learning Goals:
+        -Differences between single-cycle/pipelined CPUS
+        -What do more advanced CPUS look like
     -Code Goals:
+        -Write testbench program (!)
+        -Write up report on github
     
 Week 13 (5/01-5/07):
     -Learning Goals: Extra Week

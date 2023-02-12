@@ -1,0 +1,47 @@
+Just basic and general RISCV Notes:
+
+RISC = Reduced Instruction Set Computer
+    -Fewer instructions supported, faster average instruction time compared to CISC (complex ...)
+    -Different versions, obv
+    
+Definitions:
+    -Core: an indpendent instruction fetching unit
+    -Harts: hardware thread, for multithreading, seperate instruction handling
+    -Co-processor: a different core unit that uses RISCV or maybe extra instructions, some autonomy to primary core
+    -accelerator: non-programmable fixed function unit or core, think crypto mining machines or FPU,
+    -EEI: execution enviornment interface
+    -ISA: Instruction Set Architecture, usually is a base
+    -XLEN: width of integer register
+    -IALIGN: Instruction Alignment number in bits,
+    -ILEN: Mamximum intrusction length supported
+    -UNSPECIFIED: intentionally unconstrainted behavior
+
+RISC-V ISA:
+    -Base
+        -need to have a standard base set for compilers/others to target translations to
+        -some base versions separated by integer register bit width RV32I, RV64I
+            -some variations in machine code versions of certain commands like add between versions
+    -Extensions:
+        -denoted by letters in the ISA title, not really gonna use these unless I have a lot of extra time
+        -3 categories of extensions:
+            -Standard: defined by RISCV Foundation, machinecode of commands will not conflict with eachother
+            -Reserved: not currently defined machine encodings but reserved for future use
+            -Custom/Non-standard: wild west, may or may not conform to Standard ISA or Base depending on type
+
+RISC Memory:
+    -each integer register is 2^XLEN (32, 64, 128 depending on version)
+    -word = 32 bits, halfword = 16 bits, doubleword = 64 bits
+    -probably gonna go with little-endian encoding
+    -Memory is circular, so 2^XLEN-1 + 1 will go to location 0 in memory addresses, hardware needs to account for modulo
+    -Memory Access:
+        -Implicit:
+            -Also read as instruction fetch stage
+            -usually performed arbitrarily
+                -However, if in a program you cache the memory state of certain registers at the beginning before the pc at is those instructions, memory may have changed and you need to ensure fencing/cache-control
+        -Explicit:
+            -done by specific load and store instructions at determined memory location
+    -Memory Consistency Model(?):
+        -dealing with different harts of a EEI
+        -default is RISCV Weak Memory Ordering Model
+            
+RV32I:

@@ -12,6 +12,14 @@ Week 01 (2/06-2/12):
         -Find Hardware Simulator to use and start playing with it X
     
 Week 02 (2/13-2/19):
+    -Learning Goals: X
+    -Code Goals: X
+    
+Week 03 (2/20-2/26):
+    -Learning Goals: X
+    -Code Goals: X
+    
+Week 04 (2/27-3/05):
     -Learning Goals:
         -Set tentative schedule for project completion (!)
         -RV32I Notes, make list of commands to implement
@@ -20,14 +28,6 @@ Week 02 (2/13-2/19):
     -Code Goals:
         -Find Hardware Simulator to use and start playing with it
         -Do simple verilog chips, examples of concepts in notes
-    
-Week 03 (2/20-2/26):
-    -Learning Goals:
-    -Code Goals:
-    
-Week 04 (2/27-3/05):
-    -Learning Goals:
-    -Code Goals:
     
 Week 05 (3/06-3/12):
     -Learning Goals:

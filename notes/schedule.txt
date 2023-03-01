@@ -16,7 +16,7 @@ Week 02 (2/13-2/19):
         -Set tentative schedule for project completion (!)
         -RV32I Notes, make list of commands to implement
         -List of required parts of a CPU
-        -How to Implement a CPU
+        -How to Implement a CPU (look at github process)
     -Code Goals:
         -Find Hardware Simulator to use and start playing with it
         -Do simple verilog chips, examples of concepts in notes

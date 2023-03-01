@@ -1,0 +1,50 @@
+Just notes on a single cycle MIPS implementation to start with:
+
+Datapath:
+    -where the instructions follows from execution
+
+Single cycle:
+    -each instruction takes one long clock cycle
+    
+Stages:
+    1. IF Instruction Fetch
+    2. ID Instruction Decode
+    3. EXE Execute
+    4. MEM Data memory read or write
+    5. WB Write back to registers
+    
+    -all formats of R, I, and J go through these stages in some fashion
+
+IF:
+    Gets instruction machinecode from data memory (pointed to by PC) and put onto instruction output
+    adds 4 to PC to point to next instruction already
+
+ID:
+    takes parts of instruction for all possible formats so far since we don't know instruction type technically
+    opcode in i[26:31] are used in any instruction but a jump so take those
+    rs in i[21:25] in case this is R or I
+        -sent to register handling portion
+    rt in i[16:20] in case this is R or I
+        -sent to register handling portion and destination in case immediate I type
+    rd in i[11:15] in case this is R or I
+        -sent to register handling portion as destination
+    immediate value in i[0:15] in case
+    jump address in [0:25] in case its J
+    
+EXE:
+    ALU takes in register value, control signals from opcode calcs, and immediate
+    R type (Base register) plugs in values of rs and rt
+    I type arithmetic imeddiate (Immediate) plug in rs and immediate (muxes with rt for input based on control bit)
+    I type (Base addressing) adds rs and imeddaite to calculate where to access memory for load and stores
+    I type branches compare rs and rt and output a zero control signal
+    J type doesn't need ALU
+
+MEM:
+    Interacts with data memory
+    Control signals for rw access, address to access, rt for forwarding back to register file if saving a register value is needed
+WB:
+    mux at the back decides in ALU output or data memory gets sent back to register file with control singals and such
+
+Updating PC:
+    depending on control signals/ALU calculation it decides whether to go with regular increment of +4 already done, an offset of data, and a jump address
+

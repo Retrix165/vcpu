@@ -1,0 +1,26 @@
+Registers:
+    -33 total(?) 0x0-31 + pc
+    -x0 is always 0
+    -pc holds current instruction address
+    -Store boolean, unsigned or two's complement integers
+
+
+Instructions:
+    -rs1,rs2, and rd are in the same bit position in all instructions
+        -does make immediates more annoying apparently?
+        -rs1 i[19:15]
+        -rs2 i[24:20]
+        -rd  i[11:7]
+    -opcode is always i[6:0]
+        -presumably sets some control bits and instruction path for how the data is handled, so not exactly just an identifier but affects instruction path, func
+    -func3 is in [14:12] for most types
+        -used to designate what specific instruction within the format we want to use, presumably affects some control bits/exection of the alu or mux gates 
+    -immediates are sign extended
+        -immediates for relevant instruction types are specifically reconstructed (pg 17 riscv spec)
+        -uses i[31]
+    
+Will have to program in exception behavior eventually
+    -integer computations won't cause exceptions
+        -except maybe overflow if I want that?
+    -Ex:
+        exception on taken braken to a non aligned instruction

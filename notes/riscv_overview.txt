@@ -44,4 +44,63 @@ RISC Memory:
         -dealing with different harts of a EEI
         -default is RISCV Weak Memory Ordering Model
             
-RV32I:
+Formats:
+    -all have an opcode in i[6:0]
+    R type
+    
+    I type
+    S type
+    B type
+    U type
+    J type
+    
+Instructions:
+    These I'll implement
+    R, opcode is 0110011
+        add
+        sub
+        xor
+        or
+        and
+        sll
+        srl
+        sra
+        slt
+        sltu
+    I, opcode is 0010011
+        addi
+        xori
+        ori
+        andi
+        slli
+        srli
+        srai
+        slti
+        sltiu
+    I, opcode is 0000011
+        lb
+        lh
+        lw
+        lbu
+        lhu
+    S, opcode is 0100011
+        sb
+        sh
+        sw
+    B, opcode is 1100011
+        beq
+        bne
+        blt
+        bge
+        bltu
+        bgeu
+    J, opcode is 1101111
+        jal
+    I, opcode is 1100111
+        jalr
+    U, opcode is 0110111 or 0010111
+        lui
+        auipc
+    I*, opcode is 1110011
+        ecall
+        ebreak

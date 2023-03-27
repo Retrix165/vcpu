@@ -57,33 +57,33 @@ Formats:
 Instructions:
     These I'll implement
     R, opcode is 0110011
-        add
-        sub
-        xor
-        or
-        and
-        sll
-        srl
-        sra
-        slt
+        add (+ in ALU)  (rs and rt in) (store in rd)
+        sub (- in ALU)  (rs and rt in) (store in rd)
+        xor (^ in ALU)  (rs and rt in) (store in rd)
+        or  (| in ALU)  (rs and rt in) (store in rd)
+        and (& in ALU)  (rs and rt in) (store in rd)
+        sll (<< in ALU) (rs and rt in) (no sign extend) (store in rd)
+        srl (>> in ALU) (rs and rt in) (no sign extend) (store in rd)
+        sra (<<< in ALU)(rs and rt in) (sign extend) (store in rd)
+        slt (>>> in ALU)(rs and rt in) (sign extend) (store in rd)
         sltu
     I, opcode is 0010011
-        addi
-        xori
-        ori
-        andi
-        slli
-        srli
-        srai
-        slti
+        addi (+ in ALU)  (rs and immediate in) (store in rt)
+        xori (- in ALU)  (rs and immediate in) (store in rt)
+        ori  (| in ALU)  (rs and immediate in) (store in rt)
+        andi (& in ALU)  (rs and immediate in) (store in rt)
+        slli (<< in ALU) (rs and immediate in) (store in rt)
+        srli (>> in ALU) (rs and immediate in) (store in rt)
+        srai (<<< in ALU)(rs and immediate in) (store in rt)
+        slti (>>> in ALU)(rs and immediate in) (store in rt)
         sltiu
     I, opcode is 0000011
-        lb
+        lb  (immediate address plug into memory and write back to register)
         lh
         lw
         lbu
         lhu
-    S, opcode is 0100011
+    S, opcode is 0100011 (look)
         sb
         sh
         sw
@@ -104,3 +104,13 @@ Instructions:
     I*, opcode is 1110011
         ecall
         ebreak
+
+
+
+Stages:
+    1. IF
+        -Pull next instruction from ROM, pointed to by PC, 32-bit
+    2. ID
+    3. EXE
+    4. Memory RW
+    5. Register W

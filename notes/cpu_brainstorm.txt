@@ -24,3 +24,32 @@ Will have to program in exception behavior eventually
         -except maybe overflow if I want that?
     -Ex:
         exception on taken braken to a non aligned instruction
+
+Instruction Fetch:
+    instr (32-bit integer) taken from ROM by current PC pointer
+
+Instruction Decode:
+    (RISBUJ) opcode     = i[6:0]
+    (RI__UJ) rd         = i[11:7]
+    (__S___) im[4:0]    = i[11:7]
+    (___B__) im[4:1]    = i[11:8]
+    (___B__) im[11]     = i[7]
+    (____U_) im[31:12]  = i[31:12]
+    (RISB__) func3      = i[14:12]
+    (RISB__) rs1        = i[19:15]
+    (R_SB__) rs2        = i[24:20]
+    (_I____) im[11:0]   = i[31:20]
+    (R_____) funct7     = i[31:25]
+    (__S___) im[11:5]   = i[31:25]
+    (___B__) im[10:5]   = i[30:25]
+    (___B__) im[12]     = i[31]
+    (_____J) im[19:12]  = i[19:12]
+    (_____J) im[11]     = i[20]
+    (_____J) im[10:1]   = i[30:21]
+    (_____J) im[20]     = i[31]
+    
+Execute:
+
+Memory RW:
+
+Register Write:

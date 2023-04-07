@@ -1,0 +1,6 @@
+I'm using the `riscv_assembler` pip package in a virtual environment but the way it outputs files is annoying, so I want to change the code:
+
+The new functionality would be:
+    -Executable file format
+    -Runs on specified file in `riscvfiles` (*.s)
+    -Ouputs specified filename in `assembled` (.o)

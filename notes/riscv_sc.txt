@@ -1,0 +1,29 @@
+Stages:
+    1. IF: used PC pointer to fetch next instruction
+    2. ID: use instruction information to generate control signals and start accessing either register or generating immediates
+
+
+
+PC:
+    Will have either PC+4 or branch Destination put into it
+    -Implementation:
+        -Essentially a data flip flop with a 4 byte value, a selection bit, and a reset bit
+        - module pc(output next, input new, input write, input reset)
+        -If write is on, replace current value with new, otherwise next = next + 4, if reset, next = 0
+
+State of an element is written according to the clock but can be read any time
+
+Datapath:
+    -Instruction Memory
+        -Input: InstructionAddress[31:0], Instruciton[31:0]
+    -PC /Adder
+    -Register Memory/File
+        -Input: DataIn[31:0], RegisterNum1[4:0], RegisterNum2[4:0], RegWrite[0]
+        -Output: RegisterVal1, RegisterVal2
+    -ALU
+        -Input: Op1[31:0], Op2[31:0], AluCtl[3:0]
+        -Ouput:
+    -ALU Control
+        -Takes in ALUop bits, func7, and func3 fields to generate either an and or add subtract operation in the ALU
+    -Immediate Generator
+    

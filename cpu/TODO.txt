@@ -1,0 +1,31 @@
+TODO:
+    -PC Chip
+        Input: clock[1], reset[1], new_address[31:0]
+        Output: instr_address[31:0]
+    -Instruction Memory Handle/Chip
+        Input: clock[1], instr_address[31:0]
+        Output: instruction[31:0]
+    -Register Memory Handle/Chip
+        Input: clock[1], mem_address[31:0], write_data[31:0], mem_write[1], mem_read[1]
+        Output: data[31:0]
+    -ALU (Combinatorial) Chip
+        Input: clock[1], operand1[31:0], operand2[31:0], ALU_control[3:0]
+        Output: result[31:0], zero[1], neg[1]
+    -ALU Control Chip
+        Input: clock[1], ALUOp[1:0], instr_func7[6:0], instr_func3[2:0]
+        Output: ALU_control_output[3:0]
+    -Data Memory Chip
+        Input: clock[1], mem_address[31:0], write_data[31:0], mem_write[1], mem_read[1]
+        Output: data[31:0]
+    -Control Signals Chip
+        Input: clock[1], instruction[6:0]
+        Output: ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp[1:0]
+    -Immediate Extension Chip
+        Input: no clue
+        Output
+    -CPU Chip
+        Input: clk, rst
+        Output:
+DOING:
+DONE:
+    w-Make chip list to implement

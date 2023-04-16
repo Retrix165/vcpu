@@ -22,56 +22,63 @@ Week 03 (2/20-2/26):
 Week 04 (2/27-3/05):
     -Learning Goals:
         -Set tentative schedule for project completion (!)
-        -RV32I Notes, make list of commands to implement
+        -RV32I Notes, make list of commands to implement DONE
         -List of required parts of a CPU
-        -How to Implement a CPU (look at github process)
+        -How to Implement a CPU (look at github process) DONE
     -Code Goals:
         -Find Hardware Simulator to use and start playing with it
         -Do simple verilog chips, examples of concepts in notes
     
 Week 05 (3/06-3/12):
-    -Learning Goals:
-    -Code Goals:
+    -Learning Goals: X
+    -Code Goals: X
     
 Week 06 (3/13-3/19):
-    -Learning Goals:
-    -Code Goals:
+    -Learning Goals: X
+    -Code Goals: X
     
 Week 07 (3/20-3/26):
-    -Learning Goals:
-    -Code Goals:
+    -Learning Goals: X
+    -Code Goals: X
     
 Week 08 (3/27-4/02):
-    -Learning Goals:
-    -Code Goals:
+    -Learning Goals: X
+    -Code Goals: X
     
 Week 09 (4/03-4/09):
     -Learning Goals:
     -Code Goals:
+        -Get Verilog Compiler and interpreter Working DONE
     
 Week 10 (4/10-4/16):
     -Learning Goals:
+        -Draw out RISCV CPU Abstraction down to details DONE
+        -Read RISCV Textbook 4.1-4.4 and take notes on implementation (!)
     -Code Goals:
+        -Write out chips to implement DONE
+        -Write 4 simple verilog programs (!)
     
 Week 11 (4/17-4/23):
     -Learning Goals:
         -Learn how to write a testbench program to test CPU
+        -Differences between single-cycle/pipelined CPUS Presentation
+        -Find ide for verilog DONE
     -Code Goals:
-        -Complete CPU (!)
+        -Implement half of chips needed
     
 Week 12 (4/24-4/30):
     -Learning Goals:
-        -Differences between single-cycle/pipelined CPUS
-        -What do more advanced CPUS look like
+        -
+    -Code Goals:
+        -Finish Other half of chips
+    
+FINAL Week 13 (5/01-5/07):
+    -Learning Goals:
+        -
     -Code Goals:
         -Write testbench program (!)
         -Write up report on github
+        
     
-Week 13 (5/01-5/07):
-    -Learning Goals: Extra Week
-    -Code Goals: Extra Week
-    
-Week 14? (5/08-5/14):
-    -Learning Goals: Extra Week
-    -Code Goals: Extra Week
+
 

@@ -1,0 +1,105 @@
+$date
+	Tue Apr 18 16:55:40 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module main $end
+$var wire 8 ! value [7:0] $end
+$upscope $end
+$scope module main $end
+$var reg 1 " clk $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+bx !
+$end
+#5
+1"
+#10
+0"
+#15
+1"
+#17
+b0 !
+#20
+0"
+#25
+1"
+#30
+0"
+#35
+b1 !
+1"
+#40
+0"
+#45
+b10 !
+1"
+#50
+0"
+#55
+b11 !
+1"
+#57
+b0 !
+#60
+0"
+#65
+1"
+#70
+0"
+#75
+b1 !
+1"
+#80
+0"
+#85
+b10 !
+1"
+#90
+0"
+#95
+b11 !
+1"
+#100
+0"
+#105
+b100 !
+1"
+#110
+0"
+#115
+b101 !
+1"
+#120
+0"
+#125
+b110 !
+1"
+#130
+0"
+#135
+b111 !
+1"
+#140
+0"
+#145
+b1000 !
+1"
+#150
+0"
+#155
+b1001 !
+1"
+#160
+0"
+#165
+b1010 !
+1"
+#168

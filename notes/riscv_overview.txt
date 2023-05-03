@@ -65,7 +65,7 @@ Instructions:
         sll (<< in ALU) (rs and rt in) (no sign extend) (store in rd)
         srl (>> in ALU) (rs and rt in) (no sign extend) (store in rd)
         sra (<<< in ALU)(rs and rt in) (sign extend) (store in rd)
-        slt (>>> in ALU)(rs and rt in) (sign extend) (store in rd)
+        slt (rs and rt in) (sign extend) (store in rd)
         sltu
     I, opcode is 0010011
         addi (+ in ALU)  (rs and immediate in) (store in rt)
@@ -75,7 +75,7 @@ Instructions:
         slli (<< in ALU) (rs and immediate in) (store in rt)
         srli (>> in ALU) (rs and immediate in) (store in rt)
         srai (<<< in ALU)(rs and immediate in) (store in rt)
-        slti (>>> in ALU)(rs and immediate in) (store in rt)
+        slti (rs and immediate in) (store in rt)
         sltiu
     I, opcode is 0000011
         lb  (immediate address plug into memory and write back to register)
@@ -114,3 +114,12 @@ Stages:
     3. EXE
     4. Memory RW
     5. Register W
+
+
+add x1, x2, x3 = 0000000 0001100010 000 00001 0110011 -> 100000000000 Y
+sll x1, x2, x3 = 0000000 0001100010 001 00001 0110011 -> 100000000001 Y
+srl x1, x2, x3 = 0000000 0001100010 101 00001 0110011 -> 100000000101 Y
+sra x1, x2, x3 = 0100000 0001100010 101 00001 0110011 -> 100100000101 Y
+or x1, x2, x3  = 0000000 0001100010 110 00001 0110011 -> 100000000110 Y
+sub x1, x2, x3 = 0100000 0001100010 000 00001 0110011 -> 100100000000 Y
+xor x1, x2, x3 = 0000000 0001100010 100 00001 0110011 -> 100000000001 Y

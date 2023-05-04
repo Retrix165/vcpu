@@ -1,0 +1,113 @@
+$date
+	Thu May  4 00:55:39 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module ControlSignals_tb $end
+$var wire 1 ! RegWrite $end
+$var wire 1 " MemWrite $end
+$var wire 1 # MemToReg $end
+$var wire 1 $ MemRead $end
+$var wire 3 % ImmSrc [2:0] $end
+$var wire 1 & Branch $end
+$var wire 1 ' ALUSrc $end
+$var wire 2 ( ALUOp [1:0] $end
+$var reg 7 ) opcode [6:0] $end
+$scope module cs $end
+$var wire 7 * i_opcode [6:0] $end
+$var reg 2 + o_ALUOp [1:0] $end
+$var reg 1 ' o_ALUSrc $end
+$var reg 1 & o_Branch $end
+$var reg 3 , o_ImmSrc [2:0] $end
+$var reg 1 $ o_MemRead $end
+$var reg 1 " o_MemWrite $end
+$var reg 1 # o_MemtoReg $end
+$var reg 1 ! o_RegWrite $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ,
+bx +
+bx *
+bx )
+bx (
+x'
+x&
+bx %
+x$
+x#
+x"
+x!
+$end
+#10
+b0 %
+b0 ,
+b10 (
+b10 +
+0&
+0"
+0$
+1!
+0#
+0'
+b110011 )
+b110011 *
+#20
+b1 %
+b1 ,
+1'
+b10011 )
+b10011 *
+#30
+b0 (
+b0 +
+1$
+1#
+b11 )
+b11 *
+#40
+b10 %
+b10 ,
+1"
+0$
+0!
+0#
+b100011 )
+b100011 *
+#50
+b11 %
+b11 ,
+b1 (
+b1 +
+1&
+0"
+0'
+b1100011 )
+b1100011 *
+#60
+b100 %
+b100 ,
+0&
+1!
+b1101111 )
+b1101111 *
+#70
+b101 %
+b101 ,
+b0 (
+b0 +
+1&
+b1100111 )
+b1100111 *
+#80
+b110 %
+b110 ,
+b10111 )
+b10111 *
+#90

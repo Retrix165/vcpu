@@ -24,7 +24,6 @@ module ALUControl(  o_operation,
                         12'b1x0000000001: o_operation = 4'b1000; //8 <<
                         12'b1x0000000101: o_operation = 4'b1001; //9 >>
                         12'b1x0100000101: o_operation = 4'b1010; //10 >>>
-                        //May need to add <<, |, ^, -, >>, >>> support 
                         default: o_operation = 4'b0;
                 endcase
         end

@@ -1,22 +1,15 @@
-module RegMem(  o_read1,
-                o_read2, 
-                i_reg1_addr, 
-                i_reg2_addr, 
-                i_regW_addr,
-                i_regW_val,
-                i_RegWrite,
+module DataMem(  o_read,
+                i_mem_addr, 
+                i_memW_val,
+                i_MemWrite,
                 i_clock);
     
-    output  wire[31:0]  o_read1,
-                        o_read2;
+    output  wire[31:0]  o_read;
 
-    input   wire[4:0]   i_reg1_addr,
-                        i_reg2_addr,
-                        i_regW_addr;
+    input   wire[31:0]  i_mem_addr,
+                        i_regW_val;
 
-    input   wire[31:0]  i_regW_val;
-
-    input   wire        i_RegWrite,
+    input   wire        i_MemWrite,
                         i_clock;  
 
     reg[31:0]   reg_arr[0:31];

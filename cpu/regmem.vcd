@@ -1,0 +1,80 @@
+$date
+	Thu May  4 09:21:43 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module RegMem_tb $end
+$var wire 32 ! read2 [31:0] $end
+$var wire 32 " read1 [31:0] $end
+$var reg 1 # clk $end
+$var reg 5 $ reg1_addr [4:0] $end
+$var reg 5 % reg2_addr [4:0] $end
+$var reg 5 & regW_addr [4:0] $end
+$var reg 32 ' regW_val [31:0] $end
+$var reg 1 ( regWrite $end
+$scope module rm $end
+$var wire 1 ( i_RegWrite $end
+$var wire 1 # i_clock $end
+$var wire 5 ) i_reg1_addr [4:0] $end
+$var wire 5 * i_reg2_addr [4:0] $end
+$var wire 5 + i_regW_addr [4:0] $end
+$var wire 32 , i_regW_val [31:0] $end
+$var wire 32 - o_read1 [31:0] $end
+$var wire 32 . o_read2 [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx .
+bx -
+bx ,
+bx +
+bx *
+bx )
+x(
+bx '
+bx &
+bx %
+bx $
+0#
+bx "
+bx !
+$end
+#1
+1(
+b100 '
+b100 ,
+b11 &
+b11 +
+b0 !
+b0 .
+b10 %
+b10 *
+b0 "
+b0 -
+b11 $
+b11 )
+#5
+b100 "
+b100 -
+1#
+#6
+0(
+b110 '
+b110 ,
+b10 &
+b10 +
+#10
+0#
+#11
+1(
+#15
+b110 !
+b110 .
+1#
+#16

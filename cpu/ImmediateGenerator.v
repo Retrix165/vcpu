@@ -30,5 +30,4 @@ module ImmediateGenerator(  o_immediate,
                                 1'b0}; //U Format
         endcase 
     end
-
 endmodule

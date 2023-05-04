@@ -1,6 +1,17 @@
 # Virtual RISC-V CPU
 An honors course contract project to implement a ***RV32I*** CPU using Verilog. 
-
+### Navigation
+```
+├── cpu
+│   ├── CPU code, testbench, and .vcd files
+├── notes
+│   ├── Notes on Verilog, RISCV, and RV32I
+├── tests
+│   ├── .s -> .o file tests with python assembler package
+├── verilog_tests
+│   ├── test programs to relearn verilog
+└── README.md
+```
 ## Status
 ### Unfinished ❌
 The Virtual CPU in its current state is *unfinished* due to the following items
@@ -17,8 +28,6 @@ However, what is implemented is
 - *Functioning Immediate Generation and ALU Control modules with testbench program*
 - *Functioning PC and Control Signals modules with testbench program*
 - *A ***mostly*** completed datapath for R/I/S/B Formats*
-
-## Learning
 
 ## Challenges
 ### Time mangament
